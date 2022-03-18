@@ -1,0 +1,55 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/nery/studies/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
+Discriminator	GANs/simpleg_gan/simplegan.py	/^class Discriminator(nn.Module):$/;"	c
+Generator	GANs/simpleg_gan/simplegan.py	/^class Generator(nn.Module):$/;"	c
+__init__	GANs/simpleg_gan/simplegan.py	/^    def __init__(self, in_features):$/;"	m	class:Discriminator
+__init__	GANs/simpleg_gan/simplegan.py	/^    def __init__(self, z_dim, img_dim):$/;"	m	class:Generator
+batch_size	GANs/simpleg_gan/simplegan.py	/^        batch_size = real.shape[0]$/;"	v
+batch_size	GANs/simpleg_gan/simplegan.py	/^batch_size = 32$/;"	v
+criterion	GANs/simpleg_gan/simplegan.py	/^criterion = nn.BCELoss()$/;"	v
+data	GANs/simpleg_gan/simplegan.py	/^                data = real.reshape(-1, 1, 28, 28)$/;"	v
+dataset	GANs/simpleg_gan/simplegan.py	/^dataset = datasets.MNIST(root="dataset\/", transform=transforms, download=True)$/;"	v
+datasets	GANs/simpleg_gan/simplegan.py	/^import torchvision.datasets as datasets$/;"	I	nameref:module:torchvision.datasets
+device	GANs/simpleg_gan/simplegan.py	/^device = "cuda" if torch.cuda.is_available() else "cpu"$/;"	v
+disc	GANs/simpleg_gan/simplegan.py	/^disc = Discriminator(image_dim).to(device)$/;"	v
+disc_fake	GANs/simpleg_gan/simplegan.py	/^        disc_fake = disc(fake).view(-1)$/;"	v
+disc_real	GANs/simpleg_gan/simplegan.py	/^        disc_real = disc(real).view(-1)$/;"	v
+fake	GANs/simpleg_gan/simplegan.py	/^                fake = gen(fixed_noise).reshape(-1, 1, 28, 28)$/;"	v
+fake	GANs/simpleg_gan/simplegan.py	/^        fake = gen(noise)$/;"	v
+fixed_noise	GANs/simpleg_gan/simplegan.py	/^fixed_noise = torch.randn((batch_size, z_dim)).to(device)$/;"	v
+forward	GANs/simpleg_gan/simplegan.py	/^    def forward(self, x):$/;"	m	class:Discriminator
+forward	GANs/simpleg_gan/simplegan.py	/^    def forward(self, x):$/;"	m	class:Generator
+gen	GANs/simpleg_gan/simplegan.py	/^gen = Generator(z_dim, image_dim).to(device)$/;"	v
+image_dim	GANs/simpleg_gan/simplegan.py	/^image_dim = 28 * 28 * 1  # 784$/;"	v
+img_grid_fake	GANs/simpleg_gan/simplegan.py	/^                img_grid_fake = torchvision.utils.make_grid(fake, normalize=True)$/;"	v
+img_grid_real	GANs/simpleg_gan/simplegan.py	/^                img_grid_real = torchvision.utils.make_grid(data, normalize=True)$/;"	v
+loader	GANs/simpleg_gan/simplegan.py	/^loader = DataLoader(dataset, batch_size=batch_size, shuffle=True)$/;"	v
+lossD	GANs/simpleg_gan/simplegan.py	/^        lossD = (lossD_real + lossD_fake) \/ 2$/;"	v
+lossD_fake	GANs/simpleg_gan/simplegan.py	/^        lossD_fake = criterion(disc_fake, torch.zeros_like(disc_fake))$/;"	v
+lossD_real	GANs/simpleg_gan/simplegan.py	/^        lossD_real = criterion(disc_real, torch.ones_like(disc_real))$/;"	v
+lossG	GANs/simpleg_gan/simplegan.py	/^        lossG = criterion(output, torch.ones_like(output))$/;"	v
+lr	GANs/simpleg_gan/simplegan.py	/^lr = 3e-4$/;"	v
+nn	GANs/simpleg_gan/simplegan.py	/^import torch.nn as nn$/;"	I	nameref:module:torch.nn
+noise	GANs/simpleg_gan/simplegan.py	/^        noise = torch.randn(batch_size, z_dim).to(device)$/;"	v
+num_epochs	GANs/simpleg_gan/simplegan.py	/^num_epochs = 50$/;"	v
+opt_disc	GANs/simpleg_gan/simplegan.py	/^opt_disc = optim.Adam(disc.parameters(), lr=lr)$/;"	v
+opt_gen	GANs/simpleg_gan/simplegan.py	/^opt_gen = optim.Adam(gen.parameters(), lr=lr)$/;"	v
+optim	GANs/simpleg_gan/simplegan.py	/^import torch.optim as optim$/;"	I	nameref:module:torch.optim
+output	GANs/simpleg_gan/simplegan.py	/^        output = disc(fake).view(-1)$/;"	v
+real	GANs/simpleg_gan/simplegan.py	/^        real = real.view(-1, 784).to(device)$/;"	v
+step	GANs/simpleg_gan/simplegan.py	/^step = 0$/;"	v
+studies	README.md	/^# studies/;"	c
+transforms	GANs/simpleg_gan/simplegan.py	/^import torchvision.transforms as transforms$/;"	I	nameref:module:torchvision.transforms
+transforms	GANs/simpleg_gan/simplegan.py	/^transforms = transforms.Compose($/;"	v
+writer_fake	GANs/simpleg_gan/simplegan.py	/^writer_fake = SummaryWriter(f"logs\/fake")$/;"	v
+writer_real	GANs/simpleg_gan/simplegan.py	/^writer_real = SummaryWriter(f"logs\/real")$/;"	v
+z_dim	GANs/simpleg_gan/simplegan.py	/^z_dim = 64$/;"	v
